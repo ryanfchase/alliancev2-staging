@@ -1,25 +1,13 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My Auto Shop Landing Page</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  </head>
-  <body class="bg-gray-200">
-    {% include "src/_includes/header.njk" %}
-
-    <section
-      class="w-full h-screen bg-cover bg-center flex flex-col items-center justify-center text-white"
-      style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/img/shop-interior-800w.jpg')"
-    >
-      <div class="flex flex-col justify-center items-center">
-        <h1 class="text-white text-4xl">Your car deserves the best</h1>
-        <p class="text-white text-4xl w-1/2 text-center">Bring your car to My Auto Shop for reliable and affordable repairs and maintenance.</p>
-        <button>{{ site.data.hero-button }}</button>
-      </div>
-    </section>
-
-    {% include "src/_includes/footer.njk" %}
-  </body>
-</html>
+---
+layout: layout.njk
+title: Alliance Auto Care
+---
+<section id="main" class="py-20 overflow-hidden">
+  {% image 'src/img/shop-interior.jpg', 'fixed z-0', 'Shop Interior' %}
+  <div class="flex relative flex-col justify-center items-center pt-20">
+    <h1 class="text-white text-4xl">{{ site.titleUpper }}</h1>
+    <p class="text-white text-4xl">{{ site.titleLower }}</p>
+    <p>{{ site.description }}</p>
+    <button>{{ site.cta }}</button>
+  </div>
+</section>

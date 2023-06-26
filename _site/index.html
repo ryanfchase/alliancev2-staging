@@ -2,87 +2,80 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My Auto Shop Landing Page</title>
+    <!-- Grab title from the page data and dump it here -->
+    <title>Alliance Auto Care</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   </head>
   <body class="bg-gray-200">
-    <header class="flex justify-between items-center h-24 p-4 bg-gray-100">
-  <div class="logo">
-    <a href="/#">
-      <img class="h-auto max-w-xs" src="/img/surfboard225x60.png" alt="Alliance Surfoboard Logo" />
+    <header>
+  <div class="fixed w-screen bg-gray-100">
+    <a style="text-decoration: none !important;" href="/" class="flex float-left pl-10 pt-5">
+      <object data="img/alliance-surfboard.svg" width="15" height="45"></object>
+      <div class="flex flex-col">
+        <h1 class=" text-4xl text-[#c7aa8b]">Alliance</h1>
+        <h2 class="text-black">South Bay Auto</h2>
+      </div>
     </a>
-  </div>
-  <nav class="flex items-center">
-    <a class="mx-4 text-lg text-blue-500 hover:text-blue-700" href="/">Home</a>
-    <a class="mx-4 text-lg text-blue-500 hover:text-blue-700" href="/services">Services</a>
-    <a class="mx-4 text-lg text-blue-500 hover:text-blue-700" href="/about">About Us</a>
-    <a class="mx-4 text-lg text-blue-500 hover:text-blue-700" href="/contact">Contact Us</a>
-  </nav>
-  <div class="flex items-center space-x-4">
-    <div class="flex items-center space-x-4">
-      <a href="https://www.facebook.com/myautoshop"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.yelp.com/biz/my-auto-shop"><i class="fab fa-yelp"></i></a>
-      <a href="https://www.google.com/maps/place/myautoshop"><i class="fab fa-google"></i></a>
-    </div>
-    <div>
-      <h4 class="font-bold text-lg">Hours:</h4>
-      <p class="text-gray-600">
-        Monday - Friday: 8am - 6pm<br />
-        Saturday: 9am - 5pm<br />
-        Sunday: Closed
-      </p>
-    </div>
-    <div class="header-address">
-      <h4 class="font-bold text-lg">Address:</h4>
-      <p>
-        1669 W. Anaheim Street<br />
-        Harbor City, CA 90710
-      </p>
-    </div>
+    <nav class="float-left py-7">
+      <a href="/" class="px-7">Home</a>
+      <a href="/services" class="px-7">Services</a>
+      <a href="/contact" class="px-7">Contact</a>
+    </nav>
+    <nav class="float-right py-7">
+      <a class="px-7" href="https://www.yelp.com">Yelp</a>
+      <a h class="px-7" ref="https://www.facebook.com">Facebook</a>
+    </nav>
   </div>
 </header>
-
-
-    <section
-      class="w-full h-screen bg-cover bg-center flex flex-col items-center justify-center text-white"
-      style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/img/shop-interior-800w.jpg')"
-    >
-      <div class="flex flex-col justify-center items-center">
-        <h1 class="text-white text-4xl">Your car deserves the best</h1>
-        <p class="text-white text-4xl w-1/2 text-center">Bring your car to My Auto Shop for reliable and affordable repairs and maintenance.</p>
-        <button>NaN</button>
+    <!-- Grab the content from the page data, dump it here, and mark it as safe -->
+    <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
+    <section id="main" class="py-20 overflow-hidden">
+  <picture><source type="image/webp" srcset="/img/shop-interior-150w.webp 150w, /img/shop-interior-300w.webp 300w, /img/shop-interior-600w.webp 600w, /img/shop-interior-900w.webp 900w" sizes="(min-width: 1024px) 100vw, 50vw"><source type="image/jpeg" srcset="/img/shop-interior-150w.jpeg 150w, /img/shop-interior-300w.jpeg 300w, /img/shop-interior-600w.jpeg 600w, /img/shop-interior-900w.jpeg 900w" sizes="(min-width: 1024px) 100vw, 50vw"><img class="fixed z-0" alt="Shop Interior" loading="lazy" decoding="async" src="/img/shop-interior-150w.jpeg" width="900" height="675"></picture>
+  <div class="flex relative flex-col justify-center items-center pt-20">
+    <h1 class="text-white text-4xl">Auto Care Done</h1>
+    <p class="text-white text-4xl">Efficient And Effective</p>
+    <p>South Bay&#39;s favorite auto care for over 20 years.</p>
+    <button>See Our Work</button>
+  </div>
+</section>
+    <footer class="bg-gray-100 relative">
+  <div class="container mx-auto py-8 px-4">
+    <div class="flex flex-col md:flex-row gap-8">
+      <div id="footer-info" class="flex flex-col md:flex-row ">
+        <div id="footer-hours">
+          <h4 class="font-bold">Hours:</h4>
+          <p>
+            Monday - Friday: 8am - 6pm<br />
+            Saturday: 9am - 5pm<br />
+            Sunday: Closed
+          </p>
+        </div>
+        <div id="footer-contact">
+          <h4 class="font-bold">Contact Us:</h4>
+          <p>
+            Phone: (123) 456-7890<br />
+            Email: info@myautoshop.com
+          </p>
+        </div>
+        <div id="footer-address">
+          <h4 class="font-bold">Address:</h4>
+          <p>
+            1669 W. Anaheim Street<br />
+            Harbor City, CA 90710
+          </p>
+        </div>
       </div>
-    </section>
-
-    <footer>
-  <div class="footer-container">
-    <div class="footer-info">
-      <div class="footer-contact">
-        <h4>Contact Us:</h4>
-        <p>
-          Phone: (123) 456-7890<br />
-          Email: info@myautoshop.com
-        </p>
+      <div id="footer-links">
+        <ul class="flex flex-wrap gap-4">
+          <li><a class="text-blue-500 hover:text-blue-700" href="/">Home</a></li>
+          <li><a class="text-blue-500 hover:text-blue-700" href="/services">Services</a></li>
+          <li><a class="text-blue-500 hover:text-blue-700" href="/about">About Us</a></li>
+          <li><a class="text-blue-500 hover:text-blue-700" href="/contact">Contact Us</a></li>
+        </ul>
       </div>
-      <div class="footer-address">
-        <h4>Address:</h4>
-        <p>
-          1234 Main St<br />
-          Anytown, USA 12345
-        </p>
-      </div>
-    </div>
-    <div class="footer-links">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-      </ul>
     </div>
   </div>
 </footer>
-
   </body>
 </html>
