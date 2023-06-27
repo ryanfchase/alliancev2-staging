@@ -2,10 +2,24 @@ const Image = require("@11ty/eleventy-img");
 const yaml = require("js-yaml");
 const path = require("path");
 
+bgImageMarkup = (src, id) => `${id} {
+    background-image: url(${src});
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 6, 1),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url(${src});
+    background-repeat: no-repeat;
+    background-size: cover;
+} `;
+mediaQueryMarkup = (src, id, width) => `@media (min-width: ${width}px) { ${bgImageMarkup(src, id) }} `;
+
+
 // --- START, eleventy-img
-function generateImages(src, formats) {
+function generateImages(src, formats, widths=[150, 300, 600, 900]) {
     let options = {
-        widths: [150, 300, 600, 900],
+        widths: widths,
         formats: formats,
         urlPath: "/img/",
         outputDir: "./_site/img/",
@@ -42,12 +56,10 @@ function imageHTMLShortcode(src, cls, alt, sizes="(min-width: 1024px) 100vw, 50v
 }
 
 function imageCssShortcode(src, id){
-    console.log("HERE!!!!!")
-  const metadata = generateImages(src, ["jpeg"]);
-  let markup = [`${id} { background-image: url(${metadata.jpeg[0].url});} `];
-  // i use always jpeg for backgrounds
+  const metadata = generateImages(src, ["jpeg"], [600, 900]);
+  let markup = [bgImageMarkup(metadata.jpeg[0].url, id)];
   metadata.jpeg.slice(1).forEach((image, idx) => {
-    markup.push(`@media (min-width: ${metadata.jpeg[idx].width}px) { ${id} {background-image: url(${image.url});}}`);
+    markup.push(mediaQueryMarkup(image.url, id, image.width));
   });
   return markup.join("");
 }
