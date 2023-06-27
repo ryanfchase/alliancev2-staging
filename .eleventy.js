@@ -3,11 +3,10 @@ const yaml = require("js-yaml");
 const path = require("path");
 
 // --- START, eleventy-img
-function imageShortcode(src, cls, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
-    console.log("imageShortcode", src, cls, alt, sizes)
+function generateImages(src, formats) {
     let options = {
         widths: [150, 300, 600, 900],
-        formats: ["webp", "jpeg"],
+        formats: formats,
         urlPath: "/img/",
         outputDir: "./_site/img/",
         filenameFormat: function (id, src, width, format, options) {
@@ -20,6 +19,17 @@ function imageShortcode(src, cls, alt, sizes="(min-width: 1024px) 100vw, 50vw") 
     // generate images
     Image(src, options)
 
+    // return metadata, even if they haven't finished generating
+    metadata = Image.statsSync(src, options)
+    return metadata;
+}
+
+function imageHTMLShortcode(src, cls, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
+    console.log("imageShortcode", src, cls, alt, sizes)
+
+    // generate images
+    metadata = generateImages(src, ["jpeg", "webp"])
+
     let imageAttributes = {
         class: cls,
         alt,
@@ -27,16 +37,19 @@ function imageShortcode(src, cls, alt, sizes="(min-width: 1024px) 100vw, 50vw") 
         loading: "lazy",
         decoding: "async",
     }
-    // get metadata
-    metadata = Image.statsSync(src, options)
-
-    console.log("------")
-    // console.log("metadata", metadata);
-    console.log("imageAttributes", imageAttributes);
-    console.log("options", options);
-    console.log("------")
 
     return Image.generateHTML(metadata, imageAttributes)
+}
+
+function imageCssShortcode(src, id){
+    console.log("HERE!!!!!")
+  const metadata = generateImages(src, ["jpeg"]);
+  let markup = [`${id} { background-image: url(${metadata.jpeg[0].url});} `];
+  // i use always jpeg for backgrounds
+  metadata.jpeg.slice(1).forEach((image, idx) => {
+    markup.push(`@media (min-width: ${metadata.jpeg[idx].width}px) { ${id} {background-image: url(${image.url});}}`);
+  });
+  return markup.join("");
 }
 // --- END, eleventy-img
 
@@ -48,9 +61,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/img");
 
-    eleventyConfig.addShortcode("image", imageShortcode)
+    eleventyConfig.addShortcode("image", imageHTMLShortcode)
+    eleventyConfig.addShortcode("bgImage", imageCssShortcode)
 
-    	// Add YAML support for data files
+    // Add YAML support for data files
 	eleventyConfig.addDataExtension("yaml", (contents) =>
 		yaml.load(contents)
 	);
@@ -65,3 +79,9 @@ module.exports = function(eleventyConfig) {
         }
     }
 }
+
+    // console.log("------")
+    // console.log("metadata", metadata);
+    // console.log("imageAttributes", imageAttributes);
+    // console.log("options", options);
+    // console.log("------")

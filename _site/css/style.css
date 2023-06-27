@@ -717,9 +717,6 @@ a:hover {
   text-decoration-line: underline;
 }
 
-#main {
-}
-
 .hover\:text-blue-700:hover {
   --tw-text-opacity: 1;
   color: rgb(29 78 216 / var(--tw-text-opacity));
