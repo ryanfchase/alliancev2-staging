@@ -1,18 +1,20 @@
-<header>
-  <div class="fixed w-screen bg-gray-100">
-    <a style="text-decoration: none !important;" href="/" class="flex float-left pl-10 pt-5">
-      <object data="img/alliance-surfboard.svg" width="15" height="45"></object>
+<header class="z-10 fixed flex justify-center items-center bg-gray-100 w-screen bg-[#fffafa]">
+  <div class="container">
+    <a style="text-decoration: none !important;" href="/" class="flex float-left pt-1 pr-2">
+      <object class="pt-1" data="svg/alliance-surfboard.svg" width="20" height="54"></object>
       <div class="flex flex-col">
-        <h1 class=" text-4xl text-[#c7aa8b]">Alliance</h1>
-        <h2 class="text-black">South Bay Auto</h2>
+        <p class=" text-4xl text-[#c7aa8b]">Alliance</p>
+        <p class="text-black font-bitter font-normal leading-[0px]">South Bay Auto</p>
       </div>
     </a>
-    <nav class="float-left py-7">
-      <a href="/" class="px-7">Home</a>
-      <a href="/services" class="px-7">Services</a>
-      <a href="/contact" class="px-7">Contact</a>
+    <nav class="float-left uppercase font-light tracking-widest border-solid border-l border-black flex justify-center items-stretch min-h-[60px]">
+      {% for link in navigation.links %}
+        <a href="{{ link.url }}" class="px-7 flex items-center text-black border-solid border-r border-black">
+          {{ link.title }}
+        </a>
+      {% endfor %}
     </nav>
-    <nav class="float-right py-7">
+    <nav class="float-right py-5">
       <a class="px-7" href="https://www.yelp.com">Yelp</a>
       <a h class="px-7" ref="https://www.facebook.com">Facebook</a>
     </nav>

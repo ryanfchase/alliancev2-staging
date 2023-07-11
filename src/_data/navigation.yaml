@@ -1,0 +1,11 @@
+---
+links:
+  - title: home
+    url: "/"
+    navOrder: 0
+  - title: services
+    url: "/services"
+    navOrder: 1
+  - title: contact
+    url: "/contact"
+    navOrder: 2

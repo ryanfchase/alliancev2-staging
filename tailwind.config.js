@@ -2,9 +2,13 @@
 module.exports = {
   content: ["./_site/**/*.{html,md,js}"],
   theme: {
+    container: {
+      padding: '4rem',
+    },
     fontFamily: {
-      sans: ['"Inter var"', 'sans-serif'],
-      roboto: ['"Roboto"', 'sans-serif'],
+      sans: ['Roboto Condensed', 'sans-serif'],
+      bitter: ['Bitter', 'serif'],
+      volkorn: ['Volkorn', 'serif'],
     },
     extend: {
       colors: {

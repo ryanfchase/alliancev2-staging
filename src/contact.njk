@@ -1,38 +1,23 @@
 ---
 title: Contact Us
+layout: layout.njk
 permalink: /contact/
 ---
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Contact Us - My Auto Shop</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  </head>
-  <body>
-    {% include "src/_includes/header.njk" %}
-
-    <section class="contact-section">
-      <h2>Contact Us</h2>
-      <form>
-        <div>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-
-    {% include "src/_includes/footer.njk" %}
-  </body>
-</html>
+<section class="contact-section">
+  <h2>Contact Us</h2>
+  <form>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+  </section>

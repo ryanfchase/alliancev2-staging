@@ -15,5 +15,25 @@ body {
 }
 
 a {
-  @apply text-blue-500 no-underline hover:underline;
+  @apply no-underline hover:underline;
+}
+
+h1 {
+  @apply text-7xl uppercase;
+}
+
+h3 {
+  @apply text-xl uppercase;
+}
+
+button {
+  @apply px-4 py-2 border-2 uppercase;
+}
+
+section {
+  @apply py-20 centered-column;
+}
+
+.centered-column {
+  @apply flex flex-col items-center;
 }

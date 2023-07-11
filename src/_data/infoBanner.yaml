@@ -1,0 +1,11 @@
+---
+statements:
+  - label: Our Promise
+    svgUrl: svg/lightbulb_white.svg
+    copy: Ramiro Ramirez, the owner of Alliance Auto Care, believes in providing the highest standard of honesty, quality, and reliability.
+  - label: Appointments
+    svgUrl: svg/tablet-mobile-white.svg
+    copy: Call (310) 372-2824 to schedule an appointment, see hours below. Hablamos Español.
+  - label: Services
+    svgUrl: svg/linegraph_white.svg
+    copy: From oil changes to engine replacements, we know how to take care of your car. See our services page for a full list of services.
