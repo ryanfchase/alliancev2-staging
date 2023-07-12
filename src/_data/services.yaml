@@ -1,0 +1,51 @@
+---
+services:
+  - name: maintenance
+    id: maintenance
+    description: Our skilled technicians provide comprehensive maintenance services to keep your vehicle running smoothly and efficiently. From routine oil changes and fluid checks to thorough inspections, we ensure your car stays in optimal condition.
+    svgName: 014-cross-wrench.svg
+    detailedList:
+      - Oil change
+      - Tune up
+      - Risk management
+  - name: engine
+    id: engine
+    description: Our experienced team specializes in engine diagnostics, repairs, and replacements. Whether it's addressing a mysterious check engine light or tackling more complex engine issues, we utilize advanced techniques and quality parts to restore your vehicle's power and performance.
+    svgName: 024-piston.svg
+    detailedList:
+      - Valve job
+      - Repair and replacement
+      - Timing chains
+  - name: tires
+    id: tires
+    description: Enhance your driving experience with our tire services. We offer tire inspections, rotations, replacements, and wheel alignments to optimize your vehicle's handling, improve fuel efficiency, and ensure a safe and comfortable ride.
+    svgName: 007-car wheel.svg
+    detailedList:
+      - Rotation and balancing 
+      - Replacement
+      - Wheel alignment
+  - name: a/c repair
+    id: ac-repair
+    description: Stay cool on the road with our reliable AC repair services. Our technicians are equipped to diagnose and fix air conditioning issues, such as refrigerant leaks, faulty compressors, or worn-out components, so you can enjoy a refreshing and comfortable driving environment.
+    svgName: thermometer-outline.svg
+    detailedList:
+      - Repair and replacement
+      - Compressors, condensors, evaporators
+  - name: brakes
+    id: brakes
+    description: Your safety is our priority. Our brake services encompass inspections, pad and rotor replacements, fluid flushes, and complete system repairs. With our meticulous attention to detail, we ensure your brakes are in top-notch condition for optimal stopping power.
+    svgName: 008-brake.svg
+    detailedList:
+      # - suspension and steering
+      - Shocks and struts
+      - Gear boxes
+      - Rack and pinion
+  - name: other
+    id: other
+    description: In addition to our core services, we offer a range of other automotive solutions. From electrical system repairs and suspension maintenance to exhaust system diagnostics and transmission services, our skilled team is equipped to handle a variety of automotive needs.
+    svgName: 011-check list.svg
+    detailedList:
+      - Electronics
+      - Lights
+      - Windows
+      - Antennae

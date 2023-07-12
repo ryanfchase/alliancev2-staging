@@ -82,12 +82,6 @@ module.exports = function(eleventyConfig) {
     // Add YAML support for data files
 	eleventyConfig.addDataExtension("yaml", (contents, filepath) => yaml.load(contents));
 
-    // // Add navigation data
-    // eleventyConfig.addCollection("navigation", (collection) =>
-    //     collection.getFilteredByTag("navigation").sort((a, b) =>
-    //         a.data.navOrder - b.data.navOrder
-    // ));
-
     // Set input and output folders
     return {
         dir: {

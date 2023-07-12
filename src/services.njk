@@ -1,34 +1,44 @@
 ---
 layout: layout.njk
 title: Services - Alliance Auto Care
+serviceIconSize: 35
 permalink: /services/
 ---
-<section class="services-section">
-  <h2>Our Services</h2>
-  <div class="services-container">
-    <div class="service-card">
-      <img src="service-1.jpg" alt="Service 1" />
-      <h3>Oil Change</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac
-        neque vel sapien rhoncus elementum.
-      </p>
-    </div>
-    <div class="service-card">
-      <img src="service-2.jpg" alt="Service 2" />
-      <h3>Tire Rotation</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac
-        neque vel sapien rhoncus elementum.
-      </p>
-    </div>
-    <div class="service-card">
-      <img src="service-3.jpg" alt="Service 3" />
-      <h3>Brake Inspection</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac
-        neque vel sapien rhoncus elementum.
-      </p>
+<section id="services-banner">
+  <div class="container">
+    <h2>{{ site.servicesTitle }}</h2>
+    <p class="font-volkorn italic text-xl text-white py-4">{{ site.servicesSubtitle }}</p>
+  </div>
+</section>
+<section id="services-list" class="bg-gradient-to-b from-[#2c6fa0] to-[#081f48]">
+  <div class="container">
+    <div class="accordion">
+      {% for service in services.services %}
+        <div class="accordion-item" id="{{service.id}}">
+          {# each service goes in the accordion #}
+          {% set svgUri ='/svg/racing-icons/' + service.svgName %}
+          <a style="text-decoration: none !important;" class="accordion-link pl-8 flex flex-row justify-between" href="#{{service.id}}">
+            <div class="flex flex-row items-center">
+              <object data="{{ svgUri }}" width="{{ serviceIconSize }}" height="{{ serviceIconSize  }}"></object>
+              <h3 class="px-4">{{ service.name }}</h3>
+            </div>
+            <div class="pr-8 flex items-center">
+              <ion-icon name="add-circle-outline"></ion-icon>
+              <ion-icon class="hidden" name="remove-circle-outline"></ion-icon>
+            </div>
+          </a>
+          {# FAQ answer goes here #}
+          <div class="accordion-reveal">
+            <p>{{ service.description }}</p>
+            <p class="py-4">Our services include...</P>
+            <ul>
+              {% for detail in service.detailedList %}
+                  <li class="list-item list-disc list-inside">{{ detail }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </section>

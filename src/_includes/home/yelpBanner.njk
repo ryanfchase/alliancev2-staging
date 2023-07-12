@@ -1,0 +1,15 @@
+<section id="yelp-banner" class="bg-[#2c6fa0]">
+  <div class="centered-column py-3 mx-10 px-0 bg-[#f7f7f7] shadow-2xl text-[#333]">
+    <object data="{{ site.svgUrl }}" width="35" height="35"></object>
+    <p class="text-xl mt-4 uppercase">Yelp Testimonials</p>
+    <hr class="border-t-2 my-6 w-16 border-[#323232] ">
+    <div class="container py-6 flex flex-row">
+      {% for review in yelp.reviews %}
+        <div class="px-4 w-1/2 centered-column font-bitter font-italic text-center">
+          <p class="italic text-md leading-loose">{{ review.text }}</p>
+          <p class="pt-8 font-sans uppercase">- {{ review.author }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

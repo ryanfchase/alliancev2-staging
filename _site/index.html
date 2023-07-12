@@ -14,12 +14,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital@0;1&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   </head>
   <body class="bg-gray-200 z-0">
-    <header class="z-10 fixed flex justify-center items-center bg-gray-100 w-screen bg-[#fffafa]">
+    <header class="z-10 fixed flex justify-center items-center bg-gray-100 w-screen bg-[#fffafa] shadow-lg">
   <div class="container">
     <a style="text-decoration: none !important;" href="/" class="flex float-left pt-1 pr-2">
-      <object class="pt-1" data="svg/alliance-surfboard.svg" width="20" height="54"></object>
+      <object class="pt-1" data="/svg/alliance-surfboard.svg" width="20" height="54"></object>
       <div class="flex flex-col">
         <p class=" text-4xl text-[#c7aa8b]">Alliance</p>
         <p class="text-black font-bitter font-normal leading-[0px]">South Bay Auto</p>
@@ -40,7 +41,8 @@
         </a>
       
     </nav>
-    <nav class="float-right py-5">
+    
+    <nav class="float-right py-5 hidden">
       <a class="px-7" href="https://www.yelp.com">Yelp</a>
       <a h class="px-7" ref="https://www.facebook.com">Facebook</a>
     </nav>
@@ -57,7 +59,8 @@
     <hr class="border-t-2 w-16 my-6"> <!-- todo: replace this with carousel -->
   </div>
 </section>
-<section id="info-banner" class="bg-gradient-to-b from-[#ff133a] to-[#ed4d5d]">
+
+<section id="info-banner" class="bg-[#ed4d5d]">
   <div class="container flex flex-row leading-5">
     
       <div class="w-1/3 mx-3 pt-6 centered-column border-t-2 border-[#374151]">
@@ -88,27 +91,27 @@
 </section>
 <section id="banner-quote" class="py-32">
   <div class="container centered-column text-[#c7aa8b]">
-    <p class="text-5xl">Alliance promises honesty, quality, and reliability for our customers. Stop by and get to know your friendly local mechanic.</p>
+    <p class="text-5xl">Alliance promises honesty, quality, and reliability for our customers. Stop by and get to know the South Bay&#39;s favorite local mechanic.</p>
     <div class="w-full my-6">
       <hr class="border-t-2 w-16">
     </div>
   </div>
 </section>
-<section id="yelp" class="bg-[#2c6fa0]">
-  <div class="container centered-column py-3 bg-[#f7f7f7] shadow-2xl text-[#323232]">
-    <object data="svg/grey-yelp.svg" width="25" height="25"></object>
-    <p class="text-xl uppercase">Yelp Reviews</p>
-    <hr class="border-t-2 w-16 border-[#323232] ">
+<section id="yelp-banner" class="bg-[#2c6fa0]">
+  <div class="centered-column py-3 mx-10 px-0 bg-[#f7f7f7] shadow-2xl text-[#333]">
+    <object data="svg/grey-yelp.svg" width="35" height="35"></object>
+    <p class="text-xl mt-4 uppercase">Yelp Testimonials</p>
+    <hr class="border-t-2 my-6 w-16 border-[#323232] ">
     <div class="container py-6 flex flex-row">
       
-        <div class="px-4 w-1/2 centered-column font-volkorn font-italic text-center">
-          <p class="italic text-lg leading-tight">Ramiro is a nice gentlemen who provides quality work at a cost that won&#39;t kill you like the dealerships. I&#39;m an Uber driver and two of my friends recommended him. He has a comfortable waiting room with all the amenities. He put out an area heater on a very chilly morning for another customer and I when he saw us shivering in the waiting area! I highly recommend him!</p>
-          <p>- Patrick T.</p>
+        <div class="px-4 w-1/2 centered-column font-bitter font-italic text-center">
+          <p class="italic text-md leading-loose">Ramiro is a nice gentlemen who provides quality work at a cost that won&#39;t kill you like the dealerships. I&#39;m an Uber driver and two of my friends recommended him. He has a comfortable waiting room with all the amenities. He put out an area heater on a very chilly morning for another customer and I when he saw us shivering in the waiting area! I highly recommend him!</p>
+          <p class="pt-8 font-sans uppercase">- Patrick T.</p>
         </div>
       
-        <div class="px-4 w-1/2 centered-column font-volkorn font-italic text-center">
-          <p class="italic text-lg leading-tight">I have been going to get my car issues fixed by Ramiro and his guys for over a year now (brakes, oil changes, body damage, and most recently a cracked windshield). They are always efficient, trustworthy, reliable, and helpful. I highly recommend them.</p>
-          <p>- Sophia H.</p>
+        <div class="px-4 w-1/2 centered-column font-bitter font-italic text-center">
+          <p class="italic text-md leading-loose">I have been going to get my car issues fixed by Ramiro and his guys for over a year now (brakes, oil changes, body damage, and most recently a cracked windshield). They are always efficient, trustworthy, reliable, and helpful. I highly recommend them.</p>
+          <p class="pt-8 font-sans uppercase">- Sophia H.</p>
         </div>
       
     </div>
@@ -122,7 +125,7 @@
     
       <div class="w-1/4 mx-3">
         
-        <div class="shadow-lg">
+        <div class="shadow-lg h-[320px] overflow-hidden">
           <picture><source type="image/jpeg" srcset="/img/ramiro-150w.jpeg 150w, /img/ramiro-300w.jpeg 300w, /img/ramiro-600w.jpeg 600w, /img/ramiro-900w.jpeg 900w" sizes="(min-width: 1024px) 100vw, 50vw"><source type="image/webp" srcset="/img/ramiro-150w.webp 150w, /img/ramiro-300w.webp 300w, /img/ramiro-600w.webp 600w, /img/ramiro-900w.webp 900w" sizes="(min-width: 1024px) 100vw, 50vw"><img alt="profile-{{ member.name }}" loading="lazy" decoding="async" src="/img/ramiro-150w.jpeg" width="900" height="1086"></picture>
         </div>
         <p class="text-base">Ramiro Ramirez</p>
@@ -131,7 +134,7 @@
     
       <div class="w-1/4 mx-3">
         
-        <div class="shadow-lg">
+        <div class="shadow-lg h-[320px] overflow-hidden">
           <picture><source type="image/jpeg" srcset="/img/oscar-150w.jpeg 150w, /img/oscar-300w.jpeg 300w, /img/oscar-600w.jpeg 600w, /img/oscar-900w.jpeg 900w" sizes="(min-width: 1024px) 100vw, 50vw"><source type="image/webp" srcset="/img/oscar-150w.webp 150w, /img/oscar-300w.webp 300w, /img/oscar-600w.webp 600w, /img/oscar-900w.webp 900w" sizes="(min-width: 1024px) 100vw, 50vw"><img alt="profile-{{ member.name }}" loading="lazy" decoding="async" src="/img/oscar-150w.jpeg" width="900" height="1086"></picture>
         </div>
         <p class="text-base">Oscar</p>
@@ -140,18 +143,18 @@
     
       <div class="w-1/4 mx-3">
         
-        <div class="shadow-lg">
-          <picture><source type="image/jpeg" srcset="/img/jordan-150w.jpeg 150w, /img/jordan-300w.jpeg 300w, /img/jordan-600w.jpeg 600w, /img/jordan-900w.jpeg 900w" sizes="(min-width: 1024px) 100vw, 50vw"><source type="image/webp" srcset="/img/jordan-150w.webp 150w, /img/jordan-300w.webp 300w, /img/jordan-600w.webp 600w, /img/jordan-900w.webp 900w" sizes="(min-width: 1024px) 100vw, 50vw"><img alt="profile-{{ member.name }}" loading="lazy" decoding="async" src="/img/jordan-150w.jpeg" width="900" height="1086"></picture>
+        <div class="shadow-lg h-[320px] overflow-hidden">
+          <picture><source type="image/jpeg" srcset="/img/oscar-r-150w.jpeg 150w, /img/oscar-r-300w.jpeg 300w, /img/oscar-r-600w.jpeg 600w, /img/oscar-r-900w.jpeg 900w" sizes="(min-width: 1024px) 100vw, 50vw"><source type="image/webp" srcset="/img/oscar-r-150w.webp 150w, /img/oscar-r-300w.webp 300w, /img/oscar-r-600w.webp 600w, /img/oscar-r-900w.webp 900w" sizes="(min-width: 1024px) 100vw, 50vw"><img alt="profile-{{ member.name }}" loading="lazy" decoding="async" src="/img/oscar-r-150w.jpeg" width="900" height="1219"></picture>
         </div>
-        <p class="text-base">Jordan</p>
+        <p class="text-base">Oscar Ramirez</p>
         <p class="text-sm italic">Mechanic</p>
       </div>
     
   </div>
 </section>
       <footer class="bg-gray-100 shadow-lg">
-  <div class="container mx-auto py-8 px-4">
-    <div class="flex flex-col md:flex-row gap-8 mb-4">
+  <div class="centered-column mx-auto py-8 px-4">
+    <div class="container flex flex-col md:flex-row gap-8 mb-4">
       <div id="footer-hours">
         <h4 class="font-bold">Hours:</h4>
         <p>
@@ -164,7 +167,7 @@
         <h4 class="font-bold">Contact Us:</h4>
         <p>
           Phone: (123) 456-7890<br />
-          Email: info@myautoshop.com
+          Email: 1allianceauto@gmail.com
         </p>
       </div>
       <div id="footer-address">

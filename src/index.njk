@@ -1,68 +1,9 @@
 ---
 layout: layout.njk
 title: Alliance Auto Care
-svgUrl: svg/grey-yelp.svg
 ---
-<section id="main" class="text-white">
-  <div class="container centered-column">
-    <h1 class="font-light">{{ site.titleUpper }}</h1>
-    <h1 class="font-bold">{{ site.titleLower }}</h1>
-    <hr class="border-t-2 w-16 my-6">
-    <p class="font-volkorn italic text-xl mb-[44px]">{{ site.description }}</p>
-    <button>{{ site.cta }}</button>
-    <hr class="border-t-2 w-16 my-6"> <!-- todo: replace this with carousel -->
-  </div>
-</section>
-<section id="info-banner" class="bg-gradient-to-b from-[#ff133a] to-[#ed4d5d]">
-  <div class="container flex flex-row leading-5">
-    {% for statement in infoBanner.statements %}
-      <div class="w-1/3 mx-3 pt-6 centered-column border-t-2 border-[#374151]">
-        <h3>{{ statement.label }}</h3>
-        <div class="my-6">
-          <object data="{{ statement.svgUrl }}" width="95" height="95"></object>
-        </div>
-        <p class="mb-4">{{ statement.copy }}</p>
-      </div>
-    {% endfor %}
-  </div>
-</section>
-<section id="banner-quote" class="py-32">
-  <div class="container centered-column text-[#c7aa8b]">
-    <p class="text-5xl">{{ site.quote }}</p>
-    <div class="w-full my-6">
-      <hr class="border-t-2 w-16">
-    </div>
-  </div>
-</section>
-<section id="yelp" class="bg-[#2c6fa0]">
-  <div class="container centered-column py-3 bg-[#f7f7f7] shadow-2xl text-[#323232]">
-    <object data="{{ svgUrl }}" width="25" height="25"></object>
-    <p class="text-xl uppercase">Yelp Reviews</p>
-    <hr class="border-t-2 w-16 border-[#323232] ">
-    <div class="container py-6 flex flex-row">
-      {% for review in yelp.reviews %}
-        <div class="px-4 w-1/2 centered-column font-volkorn font-italic text-center">
-          <p class="italic text-lg leading-tight">{{ review.text }}</p>
-          <p>- {{ review.author }}</p>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-<section id="team-roster" class="bg-[#081f48] text-white">
-  <div class="container flex flex-row">
-    <div class="w-1/4 mx-3">
-      <h3 class="text-3xl font-bold">The Team</h3>
-    </div>
-    {% for member in team.members %}
-      <div class="w-1/4 mx-3">
-        {% set imgUrl = "src/img/" + member.shorthand + ".png" %}
-        <div class="shadow-lg">
-          {% image imgUrl, "profile-{{ member.name }}"  %}
-        </div>
-        <p class="text-base">{{ member.name }}</p>
-        <p class="text-sm italic">{{ member.title }}</p>
-      </div>
-    {% endfor %}
-  </div>
-</section>
+{% include "src/_includes/home/splashBanner.njk" %}
+{% include "src/_includes/home/infoBanner.njk" %}
+{% include "src/_includes/home/quoteBanner.njk" %}
+{% include "src/_includes/home/yelpBanner.njk" %}
+{% include "src/_includes/home/teamBanner.njk" %}
