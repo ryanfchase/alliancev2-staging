@@ -16,7 +16,7 @@ permalink: /services/
       {% for service in services.services %}
         <div class="accordion-item" id="{{service.id}}">
           {# each service goes in the accordion #}
-          {% set svgUri ='/svg/racing-icons/' + service.svgName %}
+          {% set svgUri ='../svg/racing-icons/' + service.svgName %}
           <a style="text-decoration: none !important;" class="accordion-link pl-8 flex flex-row justify-between" href="#{{service.id}}">
             <div class="flex flex-row items-center">
               <object data="{{ svgUri }}" width="{{ serviceIconSize }}" height="{{ serviceIconSize  }}"></object>
