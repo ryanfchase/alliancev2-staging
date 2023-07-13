@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "watch": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --watch",
-    "build": "npx @11ty/eleventy & tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --minify",
+    "build": "npx @11ty/eleventy && tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
