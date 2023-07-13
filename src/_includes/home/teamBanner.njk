@@ -5,7 +5,7 @@
     </div>
     {% for member in team.members %}
       <div class="w-1/4 mx-3">
-        {% set imgUrl = "/src/img/" + member.shorthand + ".png" %}
+        {% set imgUrl = "./src/img/" + member.shorthand + ".png" %}
         {% set altText = "Photo of " + member.name %}
         <div class="shadow-lg h-[320px] overflow-hidden">
           {% image imgUrl, altText %}
